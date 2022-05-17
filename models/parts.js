@@ -2,26 +2,27 @@ const { sequelize } = require('../config/mysql');
 const { DataTypes } = require('sequelize');
 
 const Parts = sequelize.define('parts',{
-    Assemby_Part: {
-        type: DataTypes.STRING,
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
         allowNull:false,
+    },
+    part_number: {
+        type: DataTypes.STRING
     },
     description: {
         type: DataTypes.STRING
     },
-    _Precio_Lista_OOW: {
+    list_price: {
         type: DataTypes.DOUBLE
     },
-    _Core_Price_Normal_Compra: {
+    core_price: {
         type: DataTypes.DOUBLE
     },
-    _Core_Price_Battery_Compra: {
+    core_batt_price: {
         type: DataTypes.DOUBLE
     },
-    _Core_Price_Display_Compra: {
-        type: DataTypes.DOUBLE
-    },
-    _Precio_Stocking_Sin_Orden_en_GSX: {
+    oow_price: {
         type: DataTypes.DOUBLE
     }
 });
