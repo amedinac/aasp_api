@@ -7,7 +7,7 @@ const { usersModel } = require('../models');
 //Controller register User
 const registerCtrl = async (req, res) => {
     try{
-        //req = matchedData(req);
+        req = matchedData(req);
         const password = await encrypt(req.password);
         const body = {...req, password };
         const dataUser = await usersModel.create(body);
